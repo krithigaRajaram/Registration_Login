@@ -54,11 +54,14 @@ public class UserServlet extends HttpServlet {
 
 		try {
 			userdao.registration(user);
+			request.setAttribute("status", "success");
 		} catch (ClassNotFoundException e) {
 			// TODO Auto-generated catch block
+			request.setAttribute("status", "failure");
 			e.printStackTrace();
+			
 		}
-		RequestDispatcher dispatcher =request.getRequestDispatcher("/WEB-INF/views/dashboard.jsp");
+		RequestDispatcher dispatcher =request.getRequestDispatcher("/WEB-INF/views/registerPage.jsp");
 		dispatcher.forward(request, response);
 	}
 

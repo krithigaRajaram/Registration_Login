@@ -4,6 +4,7 @@
 <html>
 <head>
     <title>User Registration</title>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -122,5 +123,30 @@
             </div>
         </form>
     </div>
+    
+ <script type="text/javascript">
+        // Using server-side status to show alerts
+        <% 
+        String status = (String) request.getAttribute("status"); 
+        if ("success".equals(status)) { 
+        %>
+        Swal.fire({
+            icon: 'success',
+            title: 'Registration Successful',
+            text: 'Your account has been created successfully!',
+            confirmButtonText: 'OK'
+        }).then(() => {
+            window.location.href = '<%= request.getContextPath() %>/dashboard';
+        });
+
+        <% } else if ("failure".equals(status)) { %>
+        Swal.fire({
+            icon: 'error',
+            title: 'Registration Failed',
+            text: 'An error occurred during registration. Please try again.',
+            confirmButtonText: 'OK'
+        });
+        <% } %>
+    </script>
 </body>
 </html>

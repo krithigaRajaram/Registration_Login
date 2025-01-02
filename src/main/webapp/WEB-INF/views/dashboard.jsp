@@ -3,10 +3,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
+    <meta charset="UTF-8">
+    <title>Registration Status</title>
+    
 </head>
 <body>
-Successfully registered!
+    <h1>Successfully Registered!</h1>
+
+
 </body>
 </html>
