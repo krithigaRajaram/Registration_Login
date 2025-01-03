@@ -80,6 +80,20 @@
         .form-group:last-child {
             margin-bottom: 0;
         }
+        
+          .text-center {
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        .text-center a {
+            color: #555555;
+            text-decoration: none;
+        }
+
+        .text-center a:hover {
+            text-decoration: underline;
+        }
     </style>
 </head>
 <body>
@@ -122,6 +136,9 @@
                 <button type="submit">Register</button>
             </div>
         </form>
+          <div class="text-center">
+            <p>Already have an account? <a href="<%= request.getContextPath() %>/loginServlet">Login here</a></p>
+        </div>
     </div>
     
  <script type="text/javascript">
